@@ -17,3 +17,11 @@ Route::middleware('api')->group(function () {
 Route::resource('scategories', ScategorieController::class);
 Route::get('/scat/{idcat}', [ScategorieController::class,'showSCategorieByCAT']);
 });
+
+use App\Http\Controllers\ArticleController;
+Route::middleware('api')->group(function () {
+Route::resource('articles', ArticleController::class);
+});
+Route::get('/listarticles/{idscat}', [ArticleController::class,'showArticlesBySCAT']);
+Route::get('/articles/art/articlespaginate', [ArticleController::class,
+'articlesPaginate']);

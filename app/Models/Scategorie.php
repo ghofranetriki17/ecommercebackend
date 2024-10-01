@@ -12,4 +12,8 @@ public function categorie()
 {
 return $this->belongsTo(Categorie::class,"categorieID");
 }
+public function article()
+{
+return $this->belongsTo(Article::class,"articleID");
+}
 }
